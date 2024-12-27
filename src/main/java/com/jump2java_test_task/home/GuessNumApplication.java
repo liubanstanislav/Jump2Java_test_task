@@ -11,8 +11,8 @@ public class GuessNumApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(GuessNumApplication.class.getResource("main.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Игра в угадай число");
+        Scene scene = new Scene(fxmlLoader.load(), 350, 240);
+        stage.setTitle("Игра " + Constants.GAME_NAME + ".");
         stage.setScene(scene);
         stage.show();
     }
