@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox alignment="CENTER" prefHeight="240.0" prefWidth="320.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.jump2java_test_task.home.GuessNumController">
@@ -15,8 +16,27 @@
          <Insets left="5.0" right="5.0" top="5.0" />
       </VBox.margin>
    </TextArea>
-  <Button fx:id="playBtn" onAction="#onHelloButtonClick" text="Играть" />
+   <HBox alignment="CENTER" prefHeight="23.0" prefWidth="309.0">
+      <children>
+        <Button fx:id="playBtn" alignment="CENTER" onAction="#onHelloButtonClick" text="Начать сначала">
+            <HBox.margin>
+               <Insets right="20.0" />
+            </HBox.margin>
+         </Button>
+         <Button fx:id="checkBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Проверить" textAlignment="CENTER">
+            <HBox.margin>
+               <Insets left="20.0" />
+            </HBox.margin>
+         </Button>
+      </children>
+      <VBox.margin>
+         <Insets left="5.0" right="5.0" />
+      </VBox.margin>
+   </HBox>
    <Button fx:id="tryBtn" mnemonicParsing="false" text="сколько попыток" />
 
-  <Label fx:id="textOutLabel" text="количество попыток" />
+  <Label fx:id="textOutLabel" alignment="TOP_LEFT" prefHeight="88.0" prefWidth="340.0" text="сообщения от игры">
+      <VBox.margin>
+         <Insets bottom="5.0" left="5.0" right="5.0" />
+      </VBox.margin></Label>
 </VBox>
