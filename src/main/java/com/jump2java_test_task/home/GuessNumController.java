@@ -58,7 +58,7 @@ public class GuessNumController {
             setResultMessage();
         });
 
-
+        //показывается количество попыток
         tryBtn.setOnAction(actionEvent -> {
             getTryQuantity();
         });
@@ -75,7 +75,6 @@ public class GuessNumController {
 
     /**
      * Метод записывает в переменную {@link GuessNumController#userNum} число полученное от юзера, предварительно сменив его тип.
-     *
      */
     private void getNumFromUser() {
 
@@ -116,10 +115,10 @@ public class GuessNumController {
         double calcNumb = calculateNumbers();
 
         //выводим соответствующие сообщения если коэф. больше, меньше либо равен 1
-        if (calcNumb > 1) {
+        if (calcNumb < 1) {
             System.out.println(Constants.NUM_MORE);
             textOutLabel.setText(Constants.NUM_MORE);
-        } else if (calcNumb < 1) {
+        } else if (calcNumb > 1) {
             System.out.println(Constants.NUM_LESS);
             textOutLabel.setText(Constants.NUM_LESS);
         } else {
@@ -128,7 +127,7 @@ public class GuessNumController {
         }
 
         //используем -1 в переменной как маркер того, что число задано неверно
-        if(userNum == -1){
+        if (userNum == -1) {
             System.out.println(Constants.WRONG_NUM);
             textOutLabel.setText(Constants.WRONG_NUM);
         }
@@ -137,13 +136,13 @@ public class GuessNumController {
     /**
      * Метод выводит количество попыток в поле сообщений в окне и в консоль
      */
-    private void getTryQuantity(){
-        switch(counter){
+    private void getTryQuantity() {
+        switch (counter) {
             case 1:
                 printTryText(" попытку");
                 break;
             case 2, 3, 4:
-               printTryText(" попытки");
+                printTryText(" попытки");
                 break;
             default:
                 printTryText(" попыток");
@@ -153,9 +152,10 @@ public class GuessNumController {
 
     /**
      * Метод используется для получения верного склонения слова в сообщении о попытках.
+     *
      * @param word
      */
-    private void printTryText(String word){
+    private void printTryText(String word) {
         System.out.println(Constants.YOU_DID_IT + counter + word);
         textOutLabel.setText(Constants.YOU_DID_IT + counter + word);
     }
